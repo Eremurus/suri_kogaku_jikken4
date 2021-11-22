@@ -6,10 +6,12 @@
 #include <iomanip>
 using namespace std;
 
+//変数変換なしの被積分関数
 double f(double x){
     return (exp(-x) - 1.0) / sqrt(x);
 }
 
+//最後に2 を足す以外は(a) のコードと同じ
 int main(){
     double a = 0.0, b = 1.0;
     vector<double> x, w, y;
@@ -53,7 +55,7 @@ int main(){
                     ans += w[m] * f((y[m]+1)*(x[j+1]-x[j])/2.0 + x[j]) * (x[j+1]-x[j]) / 2.0;
                 }
             }
-            ans += 2.0;
+            ans += 2.0;//最後に手計算で求めた2 を足す
             writing_file << i << " " << setprecision(12) <<ans << endl;
             ans -= 1.49364826562;
             writing_file_gosa << i << " " << setprecision(12) <<ans << endl;

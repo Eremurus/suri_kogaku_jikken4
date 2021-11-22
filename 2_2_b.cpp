@@ -6,10 +6,12 @@
 #include <iomanip>
 using namespace std;
 
+//変数変換した被積分関数
 double f(double x){
     return 2.0*exp(-x*x);
 }
 
+//以降は変数変換しないものと同じ
 int main(){
     double a = 0.0, b = 1.0;
     vector<double> x, w, y;
